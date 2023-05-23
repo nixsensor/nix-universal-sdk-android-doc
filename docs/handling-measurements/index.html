@@ -614,25 +614,25 @@
 <ul>
 <li>Corresponds to a single measurement in a single <code>ScanMode</code> from a Nix device</li>
 <li>Provides color data as <a href="#icolordata"><code>IColorData</code></a><ul>
-<li>To get color data, call <code>toColorData()</code> (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/to-color-data.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/to-color-data.html">Java</a>)</li>
+<li>To get color data, call <code>toColorData()</code></li>
 <li>All devices provide data for D50/2° reference white</li>
 <li>Some devices provide additional color data for other reference white values</li>
-<li>To check if available, call <code>providesColor()</code> (<a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/provides-color.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/provides-color.html">Java</a>)</li>
+<li>To check if available, call <code>providesColor()</code></li>
 </ul>
 </li>
 <li>May provide spectral data as <a href="#ispectraldata"><code>ISpectralData</code></a>, depending on the device type<ul>
-<li>To check if available, use <code>getProvidesSpectral()</code> (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/provides-spectral.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/get-provides-spectral.html">Java</a>)</li>
-<li>To get spectral data, use <code>getSpectralData()</code> (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/spectral-data.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/get-spectral-data.html">Java</a>)</li>
+<li>To check if available, use <code>getProvidesSpectral()</code> </li>
+<li>To get spectral data, use <code>getSpectralData()</code> </li>
 </ul>
 </li>
 <li>May provide density data as <a href="#idensitydata"><code>IDensityData</code></a>, depending on the device type<ul>
-<li>To check if available, use <code>getProvidesDensity()</code> (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/provides-density.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/get-provides-density.html">Java</a>)</li>
-<li>To get density data, use <code>toDensityData()</code> (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/to-density-data.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/to-density-data.html">Java</a>)</li>
+<li>To check if available, use <code>getProvidesDensity()</code> </li>
+<li>To get density data, use <code>toDensityData()</code> </li>
 </ul>
 </li>
 <li>The measurement data contains all data and metadata to completely describe the measurement<ul>
 <li>For maximum fidelity and ease of use when saving data, save the string data from <code>getRaw()</code>.</li>
-<li>The raw string value can be used to reconstruct measurement data using <code>fromRaw()</code> (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/-companion/from-raw.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/-companion/from-raw.html">Java</a>).</li>
+<li>The raw string value can be used to reconstruct measurement data using <code>fromRaw()</code>.</li>
 </ul>
 </li>
 <li>Refer to the <code>IMeasurementData</code> API documentation for full details (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-measurement-data/">Java</a>)</li>
@@ -886,12 +886,12 @@
 <li>Consists of colorimetry data for a single reference white point (e.g. - D50/2°) and single measurement mode (e.g. - M2)</li>
 <li>Can be obtained directly from an <a href="#imeasurementdata"><code>IMeasurementData</code></a> object, from or an <a href="#ispectraldata"><code>ISpectralData</code></a> object</li>
 <li>Full description of a color consisting of:<ul>
-<li>Type / color system: <code>getType()</code> as <code>ColorType</code> enum (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-color-data/-color-type/">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-color-data/-color-type/">Java</a>)</li>
+<li>Type / color system: <code>getType()</code> as <code>ColorType</code> enum </li>
 <li>Value: <code>getValue()</code> as double array (3 channels)<ul>
 <li>Format matches the system defined by <code>getType()</code></li>
 </ul>
 </li>
-<li>Reference white point: <code>getReference()</code> as <code>ReferenceWhite</code> enum (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-reference-white/">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-reference-white/">Java</a>)</li>
+<li>Reference white point: <code>getReference()</code> as <code>ReferenceWhite</code> enum</li>
 <li>Scan mode: <code>getMode()</code> as <code>ScanMode</code> enum</li>
 </ul>
 </li>
