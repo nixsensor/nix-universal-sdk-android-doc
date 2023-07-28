@@ -432,6 +432,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-410" class="md-nav__link">
+    Version 4.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-402" class="md-nav__link">
     Version 4.0.2
   </a>
@@ -480,6 +487,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-410" class="md-nav__link">
+    Version 4.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-402" class="md-nav__link">
     Version 4.0.2
   </a>
@@ -509,6 +523,26 @@
 
 
 <h1 id="release-notes">Release Notes</h1>
+<h2 id="version-410">Version 4.1.0</h2>
+<ul>
+<li>Added support for Nix Spectro L devices</li>
+<li>Added <code>IDeviceCompat/fieldCalibrationMaxDelta</code><ul>
+<li>Allows override of the maximum Delta E threshold used when performing in-field calibration</li>
+<li>Review the API reference (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-device-compat/field-calibration-max-delta.html">Kotlin</a> or Java <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-device-compat/get-field-calibration-max-delta.html">getter</a> and <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-device-compat/set-field-calibration-max-delta.html">setter</a>) for additional details</li>
+</ul>
+</li>
+<li>Updated field calibration routine for Nix Spectro 2 devices<ul>
+<li>API calls to <code>IDeviceCompat/runFieldCalibration</code> function are unchanged</li>
+<li>Additional diagnostics are performed during the white tile scan on Spectro 2 type devices. As a result, the calibration command can now take 5 - 10 seconds to complete</li>
+<li>The operation can now fail with status <code>CommandStatus/ERROR_SCAN_DELTA</code> if the tile measurement delta exceeds the allowable threshold</li>
+</ul>
+</li>
+<li>Added <code>IDeviceCompat/invalidateFieldCalibration</code> function<ul>
+<li>This function forces the field calibration record to expire on QC and Spectro 2 type devices. </li>
+<li>Review the API reference (<a href="../kotlin/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-device-compat/invalidate-field-calibration.html">Kotlin</a> or <a href="../java/html/-nix%20-universal%20-s-d-k/com.nixsensor.universalsdk/-i-device-compat/invalidate-field-calibration.html">Java</a>) for additional details</li>
+</ul>
+</li>
+</ul>
 <h2 id="version-402">Version 4.0.2</h2>
 <ul>
 <li>Added ISO Density calculations and supporting classes<ul>

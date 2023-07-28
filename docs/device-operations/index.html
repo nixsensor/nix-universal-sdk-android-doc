@@ -628,6 +628,12 @@
 <td align="center">&#9745;</td>
 <td align="center">&#9745;</td>
 </tr>
+<tr>
+<td align="left">Spectro L</td>
+<td align="center">&#9745;</td>
+<td align="center">&#9745;</td>
+<td align="center">&#9745;</td>
+</tr>
 </tbody>
 </table>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Kotlin</label><label for="__tabbed_1_2">Java</label></div>
@@ -738,9 +744,21 @@
 <li>The in-field calibration procedure may be performed as often or seldom as desired by the user. However, the flag <code>getFieldCalibrationDue()</code> indicates whether or not in-field calibration is recommended for the connected device.<ul>
 <li>This flag is updated after each regular measurement</li>
 <li>This flag is determined automatically by both elapsed time and ambient temperature change</li>
+<li>Calling <code>invalidateFieldCalibration()</code> will force the calibration record to expire on QC and Spectro 2 devices, so that <code>getFieldCalibrationDue()</code> returns <code>true</code></li>
 </ul>
 </li>
-<li>The flag <code>getSupportsFieldCalibration()</code> indicates whether or not a connected device supports this feature. The expected result by device type is shown below:</li>
+<li>The in-field calibration procedure can exit with status <code>ERROR_SCAN_DELTA</code> if a large difference is detected between the tile reference and measurement. <ul>
+<li>This status indicates an unexpected tile measurement, possibly due to:<ul>
+<li>User error (e.g. - a surface other than the reference tile was measured). In this case, the user should repeat the operation</li>
+<li>The reference tile is damaged</li>
+<li>The device has drifted too far from factory calibration for the field calibration to be reliable</li>
+</ul>
+</li>
+<li>The failure threshold can vary by device type and can be checked by calling <code>getFieldCalibrationMaxDelta()</code></li>
+<li>The failure threshold can be overridden by calling <code>setFieldCalibrationMaxDelta()</code> but this is <strong>NOT RECOMMENDED</strong></li>
+</ul>
+</li>
+<li>The flag <code>getSupportsFieldCalibration()</code> indicates whether or not a connected device supports this feature. The expected result by device type is shown below: </li>
 </ul>
 <table>
 <thead>
@@ -776,6 +794,10 @@
 </tr>
 <tr>
 <td align="left">Spectro 2</td>
+<td align="center">&#9745;</td>
+</tr>
+<tr>
+<td align="left">Spectro L</td>
 <td align="center">&#9745;</td>
 </tr>
 </tbody>
@@ -1000,6 +1022,13 @@
 </tr>
 <tr>
 <td align="left">Spectro 2</td>
+<td align="center">&#9745;</td>
+<td align="center">&#9745;</td>
+<td align="center">&#9745;</td>
+<td align="center">&#9745;</td>
+</tr>
+<tr>
+<td align="left">Spectro L</td>
 <td align="center">&#9745;</td>
 <td align="center">&#9745;</td>
 <td align="center">&#9745;</td>
